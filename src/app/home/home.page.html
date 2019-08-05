@@ -1,14 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Document Reader
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <img [src]="currentImage" *ngIf="currentImage">
   <div class="ion-padding">
-    The world is your oyster.
+    Intelligent Reader App
     <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
   </div>
+  <ion-button (click)="takePicture()" fill="outline" color="secondary">Click to scan the document!</ion-button> 
 </ion-content>
