@@ -10,7 +10,18 @@
     <img [src]="currentImage" *ngIf="currentImage">
   <div class="ion-padding">
     Intelligent Reader App
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
   </div>
-  <ion-button (click)="takePicture()" fill="outline" color="secondary">Click to scan the document!</ion-button> 
+  <ion-button (click)="takePicture()" fill="outline" color="secondary" [hidden]="scanButton">Click to scan the document!</ion-button> 
+  <ion-button (click)="processPicture()" fill="outline" color="secondary" [hidden]="processButton">Process Document</ion-button>
+
+  <div class="ion-padding" [hidden]="showDiv">
+    <ion-list>
+        <ion-item>
+          <ion-label>Image name: {{values.name}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Image type: {{values.type}}</ion-label>
+        </ion-item>
+      </ion-list>
+  </div>
 </ion-content>
